@@ -1,0 +1,30 @@
+const express = require('express')
+const {connect} = require('./config/mongodb')
+const movieRoute = require('./routes/movieRoute')
+const seriesRoute = require('./routes/seriesRoute')
+const app = express()
+const port = 3000
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use('/movies', movieRoute)
+app.use('/series', seriesRoute)
+
+app.get('/', (req,res)=>{
+    res.send('dari get')
+})
+
+connect().then(async(database) => {
+    // console.log('mongoDB connected')
+    // console.log('mongoDB connected', database);
+    // const movieCollection = database.collection('movies')
+    
+    
+    // const movieList = await movieCollection.find().toArray()
+    // console.log(movieList)
+    
+    app.listen(port, () => {
+        console.log('run on port', port);
+    })
+})
