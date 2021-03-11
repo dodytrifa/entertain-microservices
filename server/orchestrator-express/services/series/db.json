@@ -1,0 +1,12 @@
+{
+  "series": [
+    {
+      "id": 1,
+      "name": "sherlock holmes"
+    },
+    {
+      "id": 2,
+      "name": "friends"
+    }
+  ]
+}
