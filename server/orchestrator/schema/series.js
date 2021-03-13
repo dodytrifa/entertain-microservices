@@ -66,11 +66,11 @@ module.exports = {
     },
     Mutation: {
       async addSeries(parent, args, context, info){
-        console.log(args);
+        
         try {
           await redis.del('series:data')
           const {data} = await axios.post('http://localhost:4002/series', args.input)
-          // console.log('hasil post', data)
+          
           return data
         }catch(err){
           console.log(err);
@@ -78,11 +78,11 @@ module.exports = {
         }
       },
       async delSeries(parent, args, context, info){
-        console.log(args);
+        
         try {
           await redis.del('series:data')
           const {data} = await axios.delete(`http://localhost:4002/series/${args._id}`)
-          // console.log('hasil post', data)
+          
           return {msg: "Series has successfully deleted"}
         }catch(err){
           console.log(err);
@@ -90,11 +90,11 @@ module.exports = {
         }
       },
       async updateSeries(parent, args, context, info){
-        console.log(args);
+        
         try {
           await redis.del('series:data')
           const {data} = await axios.put(`http://localhost:4002/series/${args._id}`, args.input)
-          // console.log('hasil post', data)
+          
           return {msg: "Series has successfully been updated"}
         }catch(err){
           console.log(err);

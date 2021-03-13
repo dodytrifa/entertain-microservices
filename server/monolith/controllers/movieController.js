@@ -14,7 +14,7 @@ class MovieController {
   static async create(req,res){
     try {
       const movie = await Movie.create(req.body)
-      res.json(movie)
+      res.json(movie.ops[0])
     }catch(err) {
       console.log(err);
     }

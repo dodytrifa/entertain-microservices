@@ -17,8 +17,6 @@ const typeDefs = gql`
       
   }
     
-  
-
 const server = new ApolloServer({
   typeDefs: [typeDefs, MovieSchema.typeDefs, SeriesSchema.typeDefs], 
   resolvers: [resolvers, MovieSchema.resolvers, SeriesSchema.resolvers]

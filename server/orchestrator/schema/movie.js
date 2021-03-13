@@ -56,7 +56,7 @@ module.exports = {
           }else {
             const {data} = await axios.get('http://localhost:4001/movies')
             redis.set('movies:data', JSON.stringify(data))
-            // console.log(data);
+            
             return data
           }
           
@@ -72,7 +72,7 @@ module.exports = {
         try {
           await redis.del('movies:data')
           const {data} = await axios.post('http://localhost:4001/movies', args.input)
-          console.log('hasil post', data)
+          
           return data
         }catch(err){
           console.log(err);
@@ -84,7 +84,7 @@ module.exports = {
         try {
           await redis.del('movies:data')
           const {data} = await axios.delete(`http://localhost:4001/movies/${args._id}`)
-          // console.log('hasil post', data)
+          
           return {msg: "Movie has successfully deleted"}
         }catch(err){
           console.log(err);
@@ -96,7 +96,7 @@ module.exports = {
         try {
           await redis.del('movies:data')
           const {data} = await axios.put(`http://localhost:4001/movies/${args._id}`, args.input)
-          console.log('hasil post', data)
+          
           return {msg: "Movie has successfully been updated"}
         }catch(err){
           console.log(err);

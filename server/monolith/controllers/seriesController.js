@@ -14,7 +14,7 @@ class SeriesController {
   static async create(req,res){
     try {
       const series = await Series.create(req.body)
-      res.json(series)
+      res.json(series.ops[0])
     }catch(err) {
       console.log(err);
     }
