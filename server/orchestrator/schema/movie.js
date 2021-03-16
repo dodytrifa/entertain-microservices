@@ -39,10 +39,14 @@ module.exports = {
       msg: String
     }
 
+    input idMovie {
+      id:ID!
+    }
+
     type Mutation {
       addMovie (input: MovieInput): Movie
-      delMovie (_id: ID): successDel
-      updateMovie (_id:ID, input: MovieInput): successUpdate
+      delMovie (idDelete: ID!): successDel
+      updateMovie (id:ID!, input: MovieInput): successUpdate
     }
   `,
 
@@ -56,7 +60,6 @@ module.exports = {
           }else {
             const {data} = await axios.get('http://localhost:4001/movies')
             redis.set('movies:data', JSON.stringify(data))
-            
             return data
           }
           
@@ -68,11 +71,10 @@ module.exports = {
     },
     Mutation: {
       async addMovie(parent, args, context, info){
-        console.log(args);
+        
         try {
           await redis.del('movies:data')
           const {data} = await axios.post('http://localhost:4001/movies', args.input)
-          
           return data
         }catch(err){
           console.log(err);
@@ -80,22 +82,22 @@ module.exports = {
         }
       },
       async delMovie(parent, args, context, info){
-        console.log(args);
         try {
           await redis.del('movies:data')
-          const {data} = await axios.delete(`http://localhost:4001/movies/${args._id}`)
+          const {data} = await axios.delete(`http://localhost:4001/movies/${args.idDelete}`)
           
           return {msg: "Movie has successfully deleted"}
+
         }catch(err){
           console.log(err);
           return err.message
         }
       },
       async updateMovie(parent, args, context, info){
-        console.log(args);
         try {
+          console.log(args);
           await redis.del('movies:data')
-          const {data} = await axios.put(`http://localhost:4001/movies/${args._id}`, args.input)
+          const {data} = await axios.put(`http://localhost:4001/movies/${args.id}`, args.input)
           
           return {msg: "Movie has successfully been updated"}
         }catch(err){

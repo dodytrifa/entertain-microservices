@@ -22,7 +22,6 @@ class Movie {
       {_id:ObjectID(id)}
       )
   }
-
 }
 
 module.exports = Movie
