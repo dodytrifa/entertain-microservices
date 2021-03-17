@@ -7,10 +7,13 @@ function Nav() {
     <nav>
       <ul className='nav-links'>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className='linkTo'>Home</Link>
             </li>
             <li>
-              <Link to="/favorite">Favorite</Link>
+              <Link to="/addmovie" className='linkTo'>Add New Movie</Link>
+            </li>
+            <li>
+              <Link to="/favorite" className='linkTo'>Favorite</Link>
             </li>
           </ul>
     </nav>  

@@ -95,7 +95,7 @@ module.exports = {
       },
       async updateMovie(parent, args, context, info){
         try {
-          console.log(args);
+          
           await redis.del('movies:data')
           const {data} = await axios.put(`http://localhost:4001/movies/${args.id}`, args.input)
           

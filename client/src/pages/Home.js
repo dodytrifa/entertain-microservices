@@ -38,8 +38,8 @@ function Home(props) {
     <br></br>
     <h1>Entertainme web app</h1>
     <br></br>
-    <h1>Movies</h1>
-    <button type="submit" className="btn btn-primary" onClick={addMovie}>Add New Movie</button>
+    <h2>Movies</h2>
+    
     <br></br>
       <div className='m-3 row row-cols-xl-5 row-cols-md-3 row-cols-sm-2'>
         { data &&
@@ -49,7 +49,8 @@ function Home(props) {
               ) 
           })}
       </div>
-    <h1>Series</h1>
+    <h2>Series</h2>
+    <br></br>
       <div className='m-3 row row-cols-xl-5 row-cols-md-3 row-cols-sm-2'>
           { data &&
           data.series.map(series => {

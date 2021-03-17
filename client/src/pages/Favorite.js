@@ -9,6 +9,7 @@ function Favorite() {
     <>
     <br></br>
     <h1>Your Favorite Movies</h1>
+    <br></br>
     <div className='m-3 row row-cols-xl-5 row-cols-md-3 row-cols-sm-2'>
       {
         favorites.map(favorite => (

@@ -29,7 +29,7 @@
 }
 
 body {
-  background-color: #00FFFF;
+  background-color: #068b9c;
 }
 
 nav {
@@ -37,21 +37,25 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #00FFFF;
+  background: #068b9c;
+  color: white;
+}
+.linkTo {
+  color: white;
 }
 
 a:link {
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-  color: white
+  color: white;
 }
 .nav-links{
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
+  color:white; 
   list-style-type: none;
 }
 
