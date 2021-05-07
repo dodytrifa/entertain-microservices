@@ -23,3 +23,5 @@ const server = new ApolloServer({
 })
 
 server.listen().then(({url}) => console.log('server ready at',url))
+
+// server.listen(80).then(() => console.log('server ready at',80))

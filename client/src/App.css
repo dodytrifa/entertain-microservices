@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #71c9ce;
 }
 
 .App-link {
@@ -29,7 +29,7 @@
 }
 
 body {
-  background-color: #068b9c;
+  background-color: #e3fdfd;
 }
 
 nav {
@@ -37,11 +37,11 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #068b9c;
-  color: white;
+  background: #cbf1f5;
+  color: #71c9ce;
 }
 .linkTo {
-  color: white;
+  color: #00adb5;
 }
 
 a:link {
@@ -63,13 +63,4 @@ a:link {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
